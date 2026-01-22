@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Payment - The Flavor Spot restaurant payment methods.">
+    <title>Payment - The Flavor Spot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo2.png">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo2.png" alt="The Flavor Spot Logo" class="logo-icon">
+                <span class="logo-text">The Flavor Spot</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="order-tracking.html" class="nav-link">Track Order</a></li>                <li><a href="payment.html" class="nav-link active">Payment</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <div class="container">
+            <div class="payment-wrapper">
+                <!-- Payment Header -->
+                <div class="payment-header">
+                    <h1 class="payment-title">Select Payment Method</h1>
+                    <p class="payment-subtitle">Choose your preferred payment method to complete your order</p>
+                    <div class="payment-demo-badge">
+                        ℹ️ This is a demo payment method system (no real transaction)
+                    </div>
+                </div>
+
+                <!-- Payment Form -->
+                <form id="paymentForm" class="payment-form">
+                    <!-- Payment Methods -->
+                    <div class="payment-methods">
+                        <!-- Cash on Delivery -->
+                        <div class="payment-method-card">
+                            <input 
+                                type="radio" 
+                                id="cod" 
+                                name="paymentMethod" 
+                                value="cod" 
+                                class="payment-method-radio"
+                                checked
+                            >
+                            <label for="cod" class="payment-method-label">
+                                <div class="payment-method-icon">💳</div>
+                                <div class="payment-method-content">
+                                    <h3 class="payment-method-name">Cash on Delivery</h3>
+                                    <p class="payment-method-description">Pay when your order arrives at your doorstep</p>
+                                </div>
+                                <div class="payment-method-check">✓</div>
+                            </label>
+                        </div>
+
+                        <!-- Easypaisa -->
+                        <div class="payment-method-card">
+                            <input 
+                                type="radio" 
+                                id="easypaisa" 
+                                name="paymentMethod" 
+                                value="easypaisa" 
+                                class="payment-method-radio"
+                            >
+                            <label for="easypaisa" class="payment-method-label">
+                                <div class="payment-method-icon">📱</div>
+                                <div class="payment-method-content">
+                                    <h3 class="payment-method-name">Easypaisa</h3>
+                                    <p class="payment-method-description">Fast and secure mobile wallet payment</p>
+                                </div>
+                                <div class="payment-method-check">✓</div>
+                            </label>
+                        </div>
+
+                        <!-- JazzCash -->
+                        <div class="payment-method-card">
+                            <input 
+                                type="radio" 
+                                id="jazzcash" 
+                                name="paymentMethod" 
+                                value="jazzcash" 
+                                class="payment-method-radio"
+                            >
+                            <label for="jazzcash" class="payment-method-label">
+                                <div class="payment-method-icon">💰</div>
+                                <div class="payment-method-content">
+                                    <h3 class="payment-method-name">JazzCash</h3>
+                                    <p class="payment-method-description">Convenient payment through JazzCash mobile service</p>
+                                </div>
+                                <div class="payment-method-check">✓</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="payment-order-summary">
+                        <h3 class="summary-title">Order Summary</h3>
+                        <div class="summary-item">
+                            <span>Estimated Order Total:</span>
+                            <span class="summary-price">Rs. 2,586</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="payment-actions">
+                        <button type="button" class="btn-secondary" onclick="window.history.back()">
+                            Back
+                        </button>
+                        <button type="submit" id="confirmPaymentBtn" class="btn-primary">
+                            Confirm Order
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="paymentSuccessModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="success-checkmark">✓</div>
+                <h2 class="modal-title">Payment Confirmed!</h2>
+                <p class="modal-message">Your order has been received successfully</p>
+                <div class="payment-confirmation-details">
+                    <p><strong>Payment Method:</strong> <span id="confirmPaymentMethod">Cash on Delivery</span></p>
+                    <p><strong>Order Total:</strong> <span id="confirmOrderTotal">Rs. 2,586</span></p>
+                    <p><strong>Status:</strong> <span class="status-badge">Pending Confirmation</span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="window.location.href='index.html'">
+                    Back to Home
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for exclusive offers and new menu updates</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>The Flavor Spot is your ultimate destination for authentic, delicious, and premium quality food experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61585646519806" class="social-link" title="Facebook" target="_blank">f</a>
+                        <a href="https://www.instagram.com/theflavorspot0/" class="social-link" title="Instagram" target="_blank">📷</a>
+                        <a href="https://www.tiktok.com/@theflavorspot1" class="social-link" title="TikTok" target="_blank">🎵</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📍 Shamshi Road Mardan</p>
+                    <p>📞 +92 3101 550760</p>
+                    <p>✉️ info@flavorspot.gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Flavor Spot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <div class="chat-header-content">
+                <h3>🤖 AI Assistant</h3>
+                <p class="chat-status">Online</p>
+            </div>
+            <button class="chat-close" id="chatClose">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message bot-message">
+                <p>👋 Hi! I'm the AI Assistant for The Flavor Spot. How can I help you today?</p>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type your question..." class="chat-input">
+            <button id="chatSend" class="chat-send-btn">➤</button>
+        </div>
+    </div>
+
+    <!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chatToggle" title="Chat with AI Assistant">
+        <span class="chat-icon">💬</span>
+    </button>
+
+    <script src="main.js"></script>
+</body>
+</html>

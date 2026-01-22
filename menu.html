@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menu - The Flavor Spot restaurant featuring pizza, burgers, spicy items, and more.">
+    <title>Menu - The Flavor Spot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo2.png">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo2.png" alt="The Flavor Spot Logo" class="logo-icon">
+                <span class="logo-text">The Flavor Spot</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="order-tracking.html" class="nav-link">Track Order</a></li>
+                <li><a href="payment.html" class="nav-link">Payment</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Our Menu</h1>
+        <p>Explore our delicious selection of premium dishes</p>
+    </section>
+
+    <!-- Menu Search & Filter -->
+    <section class="menu-filter">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="menu-search">
+                <input type="text" id="menuSearch" placeholder="Search menu items..." class="search-input">
+                <button class="search-btn">🔍</button>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Items</button>
+                <button class="filter-btn" data-filter="pizza">Pizza</button>
+                <button class="filter-btn" data-filter="burgers">Burgers</button>
+                <button class="filter-btn" data-filter="spicy">Spicy Items</button>
+                <button class="filter-btn" data-filter="fastfood">Fast Food</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-wrapper">
+                <div class="cart-header">
+                    <h3>🛒 Shopping Cart</h3>
+                    <button class="clear-cart-btn" id="clearCartBtn">Clear Cart</button>
+                </div>
+                <div class="cart-content">
+                    <div class="cart-empty" id="cartEmpty">
+                        <p>Your cart is empty</p>
+                        <p class="cart-hint">Add items from the menu to get started</p>
+                    </div>
+                    <div class="cart-items" id="cartItems"></div>
+                    <div class="cart-summary" id="cartSummary" style="display: none;">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">Rs. 0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Delivery Fee:</span>
+                            <span id="deliveryFee">Rs. 0</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="totalPrice">Rs. 0</span>
+                        </div>
+                        <button class="checkout-btn" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Items Section -->
+    <section class="menu-section">
+        <div class="container">
+            <!-- Pizza Section -->
+            <div class="menu-category" data-category="pizza">
+                <h2 class="category-title">🍕 Pizzas</h2>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-image pizza-item-1"></div>
+                        <div class="menu-content">
+                            <h3>Margherita Supreme</h3>
+                            <p class="menu-description">Classic pizza with fresh mozzarella, tomato, and basil</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$12.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image pizza-item-2"></div>
+                        <div class="menu-content">
+                            <h3>Pepperoni Delight</h3>
+                            <p class="menu-description">Loaded with premium pepperoni and extra cheese</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$14.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image pizza-item-3"></div>
+                        <div class="menu-content">
+                            <h3>Veggie Garden</h3>
+                            <p class="menu-description">Fresh vegetables, mushrooms, and onions on thin crust</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$13.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image pizza-item-4"></div>
+                        <div class="menu-content">
+                            <h3>BBQ Chicken Supreme</h3>
+                            <p class="menu-description">Grilled chicken with BBQ sauce and cheddar cheese</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$15.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image pizza-item-5"></div>
+                        <div class="menu-content">
+                            <h3>Four Cheese</h3>
+                            <p class="menu-description">Blend of mozzarella, parmesan, cheddar, and feta</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$16.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image pizza-item-6"></div>
+                        <div class="menu-content">
+                            <h3>Meat Lovers</h3>
+                            <p class="menu-description">Pepperoni, ham, bacon, and sausage on premium crust</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$17.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Burgers Section -->
+            <div class="menu-category" data-category="burgers">
+                <h2 class="category-title">🍔 Burgers</h2>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-image burger-item-1"></div>
+                        <div class="menu-content">
+                            <h3>Classic Cheeseburger</h3>
+                            <p class="menu-description">Juicy beef patty with cheddar cheese and fresh lettuce</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$10.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image burger-item-2"></div>
+                        <div class="menu-content">
+                            <h3>Bacon Bliss</h3>
+                            <p class="menu-description">Double patty with crispy bacon and Swiss cheese</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$13.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image burger-item-3"></div>
+                        <div class="menu-content">
+                            <h3>Mushroom Swiss</h3>
+                            <p class="menu-description">Sautéed mushrooms with melted Swiss cheese</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$12.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image burger-item-4"></div>
+                        <div class="menu-content">
+                            <h3>Signature Gourmet</h3>
+                            <p class="menu-description">Premium angus beef with caramelized onions and aioli</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$15.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image burger-item-5"></div>
+                        <div class="menu-content">
+                            <h3>Spicy Kickstart</h3>
+                            <p class="menu-description">Jalapeños, pepper jack cheese, and chipotle mayo</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$13.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image burger-item-6"></div>
+                        <div class="menu-content">
+                            <h3>Garden Veggie</h3>
+                            <p class="menu-description">Veggie patty with avocado, tomato, and lettuce</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$11.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spicy Items Section -->
+            <div class="menu-category" data-category="spicy">
+                <h2 class="category-title">🌶️ Spicy Delights</h2>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-image spicy-item-1"></div>
+                        <div class="menu-content">
+                            <h3>Thai Red Curry</h3>
+                            <p class="menu-description">Spicy Thai curry with coconut milk and vegetables</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$13.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image spicy-item-2"></div>
+                        <div class="menu-content">
+                            <h3>Szechuan Noodles</h3>
+                            <p class="menu-description">Hot and numbing flavors with chili oil and peppers</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$11.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image spicy-item-3"></div>
+                        <div class="menu-content">
+                            <h3>Fire Chicken Wings</h3>
+                            <p class="menu-description">Crispy wings coated in blazing hot sauce</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$12.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image spicy-item-4"></div>
+                        <div class="menu-content">
+                            <h3>Ghost Pepper Special</h3>
+                            <p class="menu-description">For the brave: Ghost pepper sauce with meat</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$14.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image spicy-item-5"></div>
+                        <div class="menu-content">
+                            <h3>Jalapeño Poppers</h3>
+                            <p class="menu-description">Stuffed jalapeños with cheese and spicy filling</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$9.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image spicy-item-6"></div>
+                        <div class="menu-content">
+                            <h3>Harissa Hot Plate</h3>
+                            <p class="menu-description">North African spices with grilled vegetables and meat</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$13.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fast Food Section -->
+            <div class="menu-category" data-category="fastfood">
+                <h2 class="category-title">⚡ Fast Food</h2>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-image fastfood-item-1"></div>
+                        <div class="menu-content">
+                            <h3>Crispy Fries</h3>
+                            <p class="menu-description">Golden crispy fries with sea salt and spices</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$4.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image fastfood-item-2"></div>
+                        <div class="menu-content">
+                            <h3>Chicken Tenders</h3>
+                            <p class="menu-description">Breaded and fried chicken tenders, served with sauce</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$9.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image fastfood-item-3"></div>
+                        <div class="menu-content">
+                            <h3>Fish & Chips</h3>
+                            <p class="menu-description">Beer-battered fish with crispy fries</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$11.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image fastfood-item-4"></div>
+                        <div class="menu-content">
+                            <h3>Onion Rings</h3>
+                            <p class="menu-description">Perfectly fried onion rings with seasoning</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$5.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image fastfood-item-5"></div>
+                        <div class="menu-content">
+                            <h3>Mozzarella Sticks</h3>
+                            <p class="menu-description">Crispy breaded cheese sticks with marinara sauce</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$7.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image fastfood-item-6"></div>
+                        <div class="menu-content">
+                            <h3>Spring Rolls</h3>
+                            <p class="menu-description">Crispy rolls filled with vegetables and your choice of protein</p>
+                            <div class="menu-footer">
+                                <span class="menu-price">$6.99</span>
+                                <button class="add-cart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for exclusive offers and new menu updates</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>The Flavor Spot</h4>
+                    <p>Premium food restaurant offering authentic flavors and modern cuisine.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="order-tracking.html">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61585646519806" class="social-link" title="Facebook" target="_blank">f</a>
+                        <a href="https://www.instagram.com/theflavorspot0/" class="social-link" title="Instagram" target="_blank">📷</a>
+                        <a href="https://www.tiktok.com/@theflavorspot1" class="social-link" title="TikTok" target="_blank">🎵</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📍 Shamshi Road Mardan, Near (S.C.H)</p>
+                    <p>📞 +92 3101 550760</p>
+                    <p>✉️ info@flavorspot.gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Flavor Spot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <div class="chat-header-content">
+                <h3>🤖 AI Assistant</h3>
+                <p class="chat-status">Online</p>
+            </div>
+            <button class="chat-close" id="chatClose">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message bot-message">
+                <p>👋 Hi! I'm the AI Assistant for The Flavor Spot. How can I help you today?</p>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type your question..." class="chat-input">
+            <button id="chatSend" class="chat-send-btn">➤</button>
+        </div>
+    </div>
+
+    <!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chatToggle" title="Chat with AI Assistant">
+        <span class="chat-icon">💬</span>
+    </button>
+
+    <script src="main.js"></script>
+</body>
+</html>
